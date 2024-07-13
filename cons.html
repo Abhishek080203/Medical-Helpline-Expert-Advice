@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Helpline</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+
+    header {
+        background-color: white;
+        color: #4CAF50;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header img {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .consultation {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 2rem;
+    }
+
+    .expert {
+        text-align: center;
+        margin: 1rem;
+        transition: transform 0.3s;
+        position: relative;
+        width: 250px;
+    }
+
+    .expert:hover {
+        transform: scale(1.05);
+    }
+
+    .expert img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .profile-button,
+    .close-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .profile-button:hover,
+    .close-button:hover {
+        background-color: #45a049;
+    }
+
+    .profile {
+        display: none;
+        position: absolute;
+        top: 260px; /* Adjust position to be below the image and button */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        padding: 2rem;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        z-index: 100;
+        border-radius: 10px;
+        animation: fadeIn 0.3s ease;
+        width: 300px;
+    }
+
+    .profile.active {
+        display: block;
+    }
+
+    .profile h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .profile p {
+        margin-bottom: 0.5rem;
+    }
+
+    .buttons {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .buttons a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+        background-color: #0056b3;
+    }
+
+    footer {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-container label {
+        margin: 0.5rem 0 0.2rem;
+    }
+
+    .form-container select,
+    .form-container input[type="text"],
+    .form-container button {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-container button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpeg" alt="Logo">
+    <h1>Medical Helpline</h1>
+</header>
+
+<section class="consultation">
+    <div class="expert">
+        <img src="pra.png" alt="Expert Consultation">
+        <button class="profile-button" onclick="toggleProfile('profile1')">Open Profile</button>
+        <div id="profile1" class="profile">
+            <h2>Drx.Pradyuman Tiwari</h2>
+            <p>Contact: <a href="tel:+91780098112">+91 780098112</a></p>
+            <p>Email: <a href="mailto:pradyuman@gmail.com">pradyuman112@gmail.com</a></p>
+            <p>Address: Azamgarh,Varanasi, U.P [276001]</p>
+            <button class="close-button" onclick="toggleProfile('profile1')">Close</button>
+        </div>
+    </div>
+    <div class="expert">
+        <img src="mo.jpg" alt="Expert Consultation">
+        <button class="profile-button" onclick="toggleProfile('profile2')">Open Profile</button>
+        <div id="profile2" class="profile">
+            <h2>Drx.Manvendra Pratap</h2>
+            <p>Contact: <a href="tel:+917572002856">+91 7572002856</a></p>
+            <p>Email: <a href="mailto:manvendra852@gmail.com">manvendra852@gmail.com</a></p>
+            <p>Address: Aripur Sariya, Ballia, U.P [221706]</p>
+            <button class="close-button" onclick="toggleProfile('profile2')">Close</button>
+        </div>
+    </div>
+    <div class="expert">
+        <img src="pr.jpg" alt="Expert Consultation">
+        <button class="profile-button" onclick="toggleProfile('profile3')">Open Profile</button>
+        <div id="profile3" class="profile">
+            <h2>Dr. Pratham Shukla</h2>
+            <p>Contact: <a href="tel:+918765432109">+91 9555683159</a></p>
+            <p>Email: <a href="mailto:pratham23@gmail.com">pratham23@gmail.com</a></p>
+            <p>Address: Kanpur, U.p [800003]</p>
+            <button class="close-button" onclick="toggleProfile('profile3')">Close</button>
+        </div>
+    </div>
+    <div class="expert">
+        <img src="rk.png" alt="Expert Consultation">
+        <button class="profile-button" onclick="toggleProfile('profile4')">Open Profile</button>
+        <div id="profile4" class="profile">
+            <h2>Drx. Raj Kumar</h2>
+            <p>Contact: <a href="tel:+917974266426">+91 7974266426</a></p>
+            <p>Email: <a href="mailto:raj12@gmail.com">raj12@gmail.com</a></p>
+            <p>Address: Urvai Gate,Gwalior,M.P [474008]</p>
+            <button class="close-button" onclick="toggleProfile('profile4')">Close</button>
+        </div>
+    </div>
+    <div class="form-container">
+        <h2>Consult a Doctor</h2>
+        <form>
+            <label for="disease">Type of Disease:</label>
+            <select id="disease" name="disease">
+                <option value="select">Select..</option>
+                <option value="fever">Fever</option>
+                <option value="cold">Cold</option>
+                <option value="flu">Flu</option>
+                <option value="headache">Headache</option>
+            </select>
+
+            <label for="doctor">Consult Doctor:</label>
+            <select id="doctor" name="doctor">
+                <option value="select">Select..</option>
+                <option value="general">General Physician</option>
+                <option value="pediatrician">Pediatrician</option>
+                <option value="dermatologist">Dermatologist</option>
+                <option value="cardiologist">Cardiologist</option>
+            </select>
+
+            <label for="symptom1">Symptom 1:</label>
+            <input type="text" id="symptom1" name="symptom1" placeholder="Enter first symptom">
+
+            <label for="symptom2">Symptom 2:</label>
+            <input type="text" id="symptom2" name="symptom2" placeholder="Enter second symptom">
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="buttons">
+            
+            <a href="home.jsp">Back</a>
+            
+        </div>
+    </div>
+    
+</section>
+
+<footer>
+    <p>&copy; 2024 Medical Helpline. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleProfile(profileId) {
+        var profile = document.getElementById(profileId);
+        profile.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>

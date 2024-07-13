@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History Form</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+        .form-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 4px 4px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h2>Medical History Form</h2>
+        </div>
+        <form action="home.jsp" method="post">
+            
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="past_medical_history">Past Medical History:</label>
+                <textarea id="past_medical_history" name="past_medical_history" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="current_medications">Current Medications:</label>
+                <textarea id="current_medications" name="current_medications" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="allergies">Allergies:</label>
+                <textarea id="allergies" name="allergies" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="family_history">Family History:</label>
+                <textarea id="family_history" name="family_history" rows="3"></textarea>
+            </div>
+            
+            
+            <div class="form-group">
+                <label>Smoking Status:</label><br>
+                <label><input type="radio" name="smoking_status" value="Current"> Current</label>
+                <label><input type="radio" name="smoking_status" value="Former"> Former</label>
+                <label><input type="radio" name="smoking_status" value="Never"> Never</label>
+            </div>
+            <div class="form-group">
+                <label for="alcohol_consumption">Alcohol Consumption:</label>
+                <input type="text" id="alcohol_consumption" name="alcohol_consumption">
+            </div>
+            <div class="form-group">
+                <label for="drug_use">Drug Use:</label>
+                <input type="text" id="drug_use" name="drug_use">
+            </div>
+            
+            
+            <div style="text-align: center;">
+                <button type="submit" class="btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
