@@ -6,7 +6,7 @@
 
 **Domain:** WEB DEVELOPMENT 
 
-**Duration:** 03th JUNE 2024 TO 29TH JUNE 2024
+**Duration:** 03rd JUNE 2024 TO 29TH JUNE 2024
 
 # OUTPUT
 
